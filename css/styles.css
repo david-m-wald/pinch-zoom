@@ -1,0 +1,36 @@
+* {
+  touch-action: none; /*prevent default browser response to touch gestures*/
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/*#container should be sized to fit content at 1x magnification without overflow but still allow for overflow*/
+#container {
+  margin: 50px auto;
+  width: 500px;
+  height: auto; /*fit content*/
+  overflow: hidden; /*hide scrollbars - optional; regardless, scrolling must be allowed*/
+  border: 5px solid black;
+}
+
+/*#touchOverlay requires all properties listed with given values*/
+#touchOverlay {
+  position: absolute;
+  width: 100%;  /*for 100% coverage of content*/
+  height: 100%; /*for 100% coverage of content*/
+}
+
+/*#zoomContent requires width, height, and transform properties with given values*/
+#zoomContent {
+  text-align: center;
+  width: 100%;  /*for 100% coverage of container*/
+  height: 100%; /*for 100% coverage of container*/
+  transform-origin: top left;
+  transform: scale(1);
+}
